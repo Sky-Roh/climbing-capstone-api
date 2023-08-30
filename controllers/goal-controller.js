@@ -1,0 +1,57 @@
+const { GoalSettings } = require("../sequelize/models");
+
+const createGoal = async (req, res) => {
+  try {
+    const goal = await GoalSettings.create(req.body);
+    return res.status(201).json(goal);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+const getAllGoals = async (req, res) => {
+  try {
+    const goals = await GoalSettings.findAll();
+    return res.status(200).json(goals);
+  } catch (err) {
+    console.log("Error:", err);
+    return res.status(500).send("Internal Server Error");
+  }
+};
+
+const updateGoal = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const goal = await GoalSettings.findByPk(id);
+    if (!goal) {
+      return res.status(404).json({ error: "Goal not found" });
+    }
+    await goal.update(req.body);
+    return res.status(200).json(goal);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+const deleteGoal = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const goal = await GoalSettings.findByPk(id);
+    if (!goal) {
+      return res.status(404).json({ error: "Goal not found" });
+    }
+    await goal.destroy();
+    return res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  createGoal,
+  getAllGoals,
+  updateGoal,
+  deleteGoal
+};
