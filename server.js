@@ -10,6 +10,7 @@ const userRouter = require('./routes/users.js')
 const goalRouter = require('./routes/goals.js')
 const sessionRouter = require('./routes/sessions.js')
 const packinglistRouter = require('./routes/packinglists.js')
+const climbingtypeRouter = require('./routes/climbingtypes.js')
 
 app.use(
   cors({
@@ -26,9 +27,7 @@ app.use("/users", userRouter)
 app.use("/goals", goalRouter)
 app.use("/climbingsession", sessionRouter)
 app.use("/packinglist", packinglistRouter)
-
-
-
+app.use("/climbingtype", climbingtypeRouter)
 
 app.listen(PORT, async () => {
   try {
