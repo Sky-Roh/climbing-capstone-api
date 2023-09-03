@@ -9,6 +9,25 @@ const createPackingList = async (req, res) => {
   }
 };
 
+const getOnePackingList = async (req, res) => {
+  const packingListItemId = req.params.id;
+
+  try {
+    const packingListItem = await PackingLists.findOne({
+      where: { packing_id: packingListItemId },
+    });
+
+    if (!packingListItem) {
+      return res.status(404).json({ message: "Packing list item not found" });
+    }
+
+    return res.status(200).json(packingListItem);
+  } catch (err) {
+    console.log("Error:", err);
+    return res.status(500).send("Internal Server Error");
+  }
+};
+
 const getAllPackingList = async (req, res) => {
   try {
     const list = await PackingLists.findAll();
@@ -51,7 +70,8 @@ const deletePackingList = async (req, res) => {
 
 module.exports = {
   createPackingList,
+  getOnePackingList,
   getAllPackingList,
   updatePackingList,
-  deletePackingList
+  deletePackingList,
 };

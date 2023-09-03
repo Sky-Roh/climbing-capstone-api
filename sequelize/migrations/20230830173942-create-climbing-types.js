@@ -12,9 +12,6 @@ module.exports = {
       type_name: {
         type: Sequelize.STRING
       },
-      hold_type: {
-        type: Sequelize.STRING
-      },
       description: {
         type: Sequelize.STRING
       },

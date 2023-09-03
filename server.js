@@ -20,7 +20,7 @@ app.use(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("HELLO");
+  res.send("HELLO, It is working now");
 });
 
 app.use("/users", userRouter)

@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
       achievement: {
         type: DataTypes.STRING
       },
+      check: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        defaultValue: false 
+      },
       description: {
         type: DataTypes.STRING
       },

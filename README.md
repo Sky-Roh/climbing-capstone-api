@@ -30,3 +30,6 @@ npx sequelize-cli model:generate --name ClimbingSessions --attributes session_da
 ## sequelize migration
 npx sequelize-cli db:migrate
 npx sequelize-cli db:migrate:undo
+
+## sequelize seed
+npx sequelize db:seed:all

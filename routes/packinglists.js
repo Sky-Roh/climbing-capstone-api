@@ -9,7 +9,8 @@ router
 
 router
   .route("/:id")
+  .get(packinglistController.getOnePackingList)
   .put(packinglistController.updatePackingList)
-  .delete(packinglistController.deletePackingList)
+  .delete(packinglistController.deletePackingList);
 
 module.exports = router;

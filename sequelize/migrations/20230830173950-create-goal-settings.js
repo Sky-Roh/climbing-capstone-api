@@ -15,6 +15,9 @@ module.exports = {
       achievement: {
         type: Sequelize.STRING
       },
+      check: {
+        type: Sequelize.STRING
+      },
       description: {
         type: Sequelize.STRING
       },

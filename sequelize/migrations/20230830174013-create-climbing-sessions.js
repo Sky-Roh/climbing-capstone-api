@@ -12,6 +12,12 @@ module.exports = {
       session_date: {
         type: Sequelize.DATE
       },
+      location: {
+        type: Sequelize.STRING
+      },
+      grade : {
+        type: Sequelize.STRING
+      },
       duration: {
         type: Sequelize.STRING
       },

@@ -9,6 +9,7 @@ router
 
 router
   .route("/:id")
+  .get(sessionController.getOneSession)
   .put(sessionController.updateSession)
   .delete(sessionController.deleteSession)
 
