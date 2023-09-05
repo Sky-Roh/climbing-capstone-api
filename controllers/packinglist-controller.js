@@ -39,7 +39,6 @@ const getAllPackingList = async (req, res) => {
 };
 
 
-
 const updatePackingList = async (req, res) => {
   try {
     const { id } = req.params;
@@ -73,7 +72,6 @@ const updateCheckPackingList = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
 
 const deletePackingList = async (req, res) => {
   try {

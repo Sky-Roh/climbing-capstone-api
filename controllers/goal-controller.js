@@ -1,4 +1,5 @@
-const { GoalSettings } = require("../sequelize/models");
+const { GoalSettings, sequelize } = require("../sequelize/models");
+const { QueryTypes } = require("sequelize");
 
 const createGoal = async (req, res) => {
   try {
@@ -9,9 +10,28 @@ const createGoal = async (req, res) => {
   }
 };
 
+// const getAllGoals = async (req, res) => {
+//   try {
+//     const goals = await GoalSettings.findAll();
+//     return res.status(200).json(goals);
+//   } catch (err) {
+//     console.log("Error:", err);
+//     return res.status(500).send("Internal Server Error");
+//   }
+// };
+
 const getAllGoals = async (req, res) => {
   try {
-    const goals = await GoalSettings.findAll();
+    const goals = await sequelize.query(
+      `
+    SELECT "goal_id", "goal", "achievement", "check", "description", "user_id", "createdAt", "updatedAt" 
+    FROM "GoalSettings" 
+    ORDER BY "achievement" DESC, "createdAt" DESC
+    `,
+      {
+        type: QueryTypes.SELECT,
+      }
+    );
     return res.status(200).json(goals);
   } catch (err) {
     console.log("Error:", err);
@@ -73,5 +93,5 @@ module.exports = {
   getOneGoal,
   getAllGoals,
   updateGoal,
-  deleteGoal
+  deleteGoal,
 };
