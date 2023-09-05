@@ -38,6 +38,8 @@ const getAllPackingList = async (req, res) => {
   }
 };
 
+
+
 const updatePackingList = async (req, res) => {
   try {
     const { id } = req.params;
@@ -52,6 +54,26 @@ const updatePackingList = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+
+const updateCheckPackingList = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const list = await PackingLists.findByPk(id);
+    if (!list) {
+      return res.status(404).json({ error: "List not found" });
+    }
+
+    const updatedCheck = Boolean(req.body.check);
+
+    await list.update({ check: updatedCheck });
+
+    return res.status(200).json(list);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
 
 const deletePackingList = async (req, res) => {
   try {
@@ -72,6 +94,7 @@ module.exports = {
   createPackingList,
   getOnePackingList,
   getAllPackingList,
+  updateCheckPackingList,
   updatePackingList,
   deletePackingList,
 };

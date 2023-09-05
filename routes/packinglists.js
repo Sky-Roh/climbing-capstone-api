@@ -11,6 +11,7 @@ router
   .route("/:id")
   .get(packinglistController.getOnePackingList)
   .put(packinglistController.updatePackingList)
+  .patch(packinglistController.updateCheckPackingList)
   .delete(packinglistController.deletePackingList);
 
 module.exports = router;

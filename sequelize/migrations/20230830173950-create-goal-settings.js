@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       check: {
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
       description: {
         type: Sequelize.STRING

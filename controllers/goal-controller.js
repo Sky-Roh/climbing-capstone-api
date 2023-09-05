@@ -19,6 +19,25 @@ const getAllGoals = async (req, res) => {
   }
 };
 
+const getOneGoal = async (req, res) => {
+  const goalId = req.params.id;
+
+  try {
+    const goalItem = await GoalSettings.findOne({
+      where: { goal_id: goalId },
+    });
+
+    if (!goalItem) {
+      return res.status(404).json({ message: "Goal is not found" });
+    }
+
+    return res.status(200).json(goalItem);
+  } catch (err) {
+    console.log("Error:", err);
+    return res.status(500).send("Internal Server Error");
+  }
+};
+
 const updateGoal = async (req, res) => {
   try {
     const { id } = req.params;
@@ -51,6 +70,7 @@ const deleteGoal = async (req, res) => {
 
 module.exports = {
   createGoal,
+  getOneGoal,
   getAllGoals,
   updateGoal,
   deleteGoal

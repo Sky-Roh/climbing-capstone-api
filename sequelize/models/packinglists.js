@@ -30,16 +30,12 @@ module.exports = (sequelize, DataTypes) => {
       },
       check: {
         allowNull: false,
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         defaultValue: false 
       },
-      type_id: {
+      climbingtype_name: {
         allowNull: false,
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'ClimbingTypes',
-          key: 'id'
-        }
+        type: DataTypes.STRING
       },
       user_id: {
         allowNull: false,

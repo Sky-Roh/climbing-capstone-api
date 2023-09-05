@@ -16,10 +16,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       check: {
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
-      type_id: {
-        type: Sequelize.INTEGER
+      climbingtype_name: {
+        type: Sequelize.STRING
       },
       user_id: {
         type: Sequelize.INTEGER

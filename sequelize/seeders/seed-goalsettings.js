@@ -1,47 +1,98 @@
-// seed-goal-settings.js
-
 'use strict';
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('GoalSettings', [
       {
-        goal: 'Climb a 5.11 route',
+        goal: 'Climb a 5.10 route at the local gym',
         achievement: 'Completed',
         check: true,
-        description: 'This was a challenging climb that required a lot of training and practice.',
-        user_id: 1, // Replace with the actual user ID for this goal
+        description: 'Train regularly and build strength to achieve this goal.',
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        goal: 'Complete a bouldering competition',
+        goal: 'Lead climb an outdoor route',
+        achievement: 'In Progress',
+        check: false,
+        description: 'Improve lead climbing skills and gain outdoor experience.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        goal: 'Climb a multi-pitch route',
         achievement: 'Completed',
         check: true,
-        description: 'Participated in the local bouldering competition and achieved a top-three finish.',
-        user_id: 1, // Replace with the actual user ID for this goal
+        description: 'Learn multi-pitch techniques and teamwork.',
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        goal: 'Lead climb on a multi-pitch route',
-        achievement: 'In progress',
+        goal: 'Master crack climbing techniques',
+        achievement: 'In Progress',
         check: false,
-        description: 'Planned multi-pitch climbing for the first time.',
-        user_id: 1, // Replace with the actual user ID for this goal
+        description: 'Practice crack climbing skills regularly.',
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        goal: 'Improve overall climbing endurance',
-        achievement: 'Wating',
-        check: false,
-        description: 'Not started yet.',
-        user_id: 1, // Replace with the actual user ID for this goal
+        goal: 'Climb a 14er mountain',
+        achievement: 'Completed',
+        check: true,
+        description: 'Plan a trip to a 14er mountain and prepare for high-altitude climbing.',
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
-      // Add more goal data as needed
+      {
+        goal: 'Boulder a V5 problem',
+        achievement: 'In Progress',
+        check: false,
+        description: 'Focus on strength and technique to boulder at a higher grade.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        goal: 'Complete a climbing marathon',
+        achievement: 'Completed',
+        check: true,
+        description: 'Challenge endurance and mental toughness.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        goal: 'Climb a famous rock face',
+        achievement: 'In Progress',
+        check: false,
+        description: 'Plan a trip to a famous climbing location and accomplish a classic route.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        goal: 'Lead climb a 5.11 route',
+        achievement: 'Completed',
+        check: true,
+        description: 'Train hard and gain outdoor lead climbing experience.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        goal: 'Climb ice in a winter expedition',
+        achievement: 'Waiting',
+        check: false,
+        description: 'Prepare for extreme cold conditions and ice climbing techniques.',
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
