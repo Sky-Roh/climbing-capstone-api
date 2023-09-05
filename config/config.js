@@ -18,7 +18,10 @@ module.exports = {
     host: DB_HOST,
     dialect: "postgres",
     dialectOptions: {
-      ssl: true,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
   },
   test: {
@@ -28,7 +31,10 @@ module.exports = {
     host: TEST_DB_HOST,
     dialect: "postgres",
     dialectOptions: {
-      ssl: true,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
   },
   production: {
