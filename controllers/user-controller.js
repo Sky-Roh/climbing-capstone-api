@@ -1,4 +1,4 @@
-const { Users } = require("../sequelize/models");
+const { Users } = require("../models");
 
 const createUser = async (req, res) => {
   try {

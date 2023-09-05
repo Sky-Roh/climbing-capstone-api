@@ -1,4 +1,4 @@
-const { GoalSettings, sequelize } = require("../sequelize/models");
+const { GoalSettings, sequelize } = require("../models");
 const { QueryTypes } = require("sequelize");
 
 const createGoal = async (req, res) => {

@@ -1,4 +1,4 @@
-const { ClimbingTypes } = require("../sequelize/models");
+const { ClimbingTypes } = require("../models");
 
 const createClimbingType = async (req, res) => {
   try {

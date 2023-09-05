@@ -1,4 +1,4 @@
-const { ClimbingSessions, sequelize } = require("../sequelize/models");
+const { ClimbingSessions, sequelize } = require("../models");
 const { QueryTypes } = require('sequelize');
 
 const createSession = async (req, res) => {

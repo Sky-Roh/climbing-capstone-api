@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
-const { sequelize } = require("./sequelize/models");
+const { sequelize } = require("./models");
 const userRouter = require('./routes/users.js')
 const goalRouter = require('./routes/goals.js')
 const sessionRouter = require('./routes/sessions.js')
@@ -18,6 +18,10 @@ app.use(
   })
 );
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Hello, It is working now");
+});
 
 app.use("/users", userRouter)
 app.use("/goals", goalRouter)

@@ -1,4 +1,4 @@
-const { PackingLists } = require("../sequelize/models");
+const { PackingLists } = require("../models");
 
 const createPackingList = async (req, res) => {
   try {
