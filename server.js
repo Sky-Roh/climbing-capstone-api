@@ -19,10 +19,6 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("HELLO, It is working now");
-});
-
 app.use("/users", userRouter)
 app.use("/goals", goalRouter)
 app.use("/climbingsession", sessionRouter)
