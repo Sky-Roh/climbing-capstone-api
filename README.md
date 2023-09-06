@@ -7,6 +7,10 @@ Tables
 - packingLists
 - climbingSessions
 
+# Deploy
+https://zany-plum-iguana-sock.cyclic.app
+
+
 ## start with npm 
 npm init
 npm i cors dotenv express nodemon fs pg pg-hstore sequelize seque
@@ -33,3 +37,5 @@ npx sequelize-cli db:migrate:undo
 
 ## sequelize seed
 npx sequelize db:seed:all
+
+

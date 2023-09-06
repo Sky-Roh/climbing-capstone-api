@@ -1,4 +1,5 @@
-const { PackingLists } = require("../models");
+const { PackingLists, sequelize } = require("../models");
+const { QueryTypes } = require("sequelize");
 
 const createPackingList = async (req, res) => {
   try {
@@ -30,14 +31,26 @@ const getOnePackingList = async (req, res) => {
 
 const getAllPackingList = async (req, res) => {
   try {
-    const list = await PackingLists.findAll();
+    const list = await sequelize.query(
+      `SELECT "packing_id", 
+      "packing_item", 
+      "important_level", 
+      "check", 
+      "climbingtype_name", 
+      "user_id", 
+      "createdAt", 
+      "updatedAt" 
+      FROM "PackingLists" 
+      ORDER BY "important_level" DESC`,
+      {
+        type: QueryTypes.SELECT,
+      });
     return res.status(200).json(list);
   } catch (err) {
     console.log("Error:", err);
     return res.status(500).send("Internal Server Error");
   }
 };
-
 
 const updatePackingList = async (req, res) => {
   try {

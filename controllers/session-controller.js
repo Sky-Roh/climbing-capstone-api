@@ -31,7 +31,7 @@ const getOneSession = async (req, res) => {
       JOIN "ClimbingTypes" ct ON cs."type_id" = ct."type_id"
       WHERE cs.session_id = :sessionId
     `, {
-      replacements: { sessionId }, // Bind the sessionId as a parameter
+      replacements: { sessionId }, 
       type: QueryTypes.SELECT,
     });
 
