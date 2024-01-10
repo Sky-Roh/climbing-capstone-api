@@ -12,15 +12,16 @@ https://zany-plum-iguana-sock.cyclic.app
 
 
 ## start with npm 
-npm init
-npm i cors dotenv express nodemon fs pg pg-hstore sequelize seque
+- npm init
+- npm i cors dotenv express nodemon fs pg pg-hstore sequelize seque
 lize-cli
 
 ## sequelize-cli 
 - Initialize sequelize-cli
-npx sequelize-cli init
+- npx sequelize-cli init
 
-- Generate tables
+## Generate tables
+
 npx sequelize-cli model:generate --name Users --attributes username:string,password:string,email:string,phone:string,description:string
 
 npx sequelize-cli model:generate --name ClimbingTypes --attributes type_name:string,hold_type:string,description:string
