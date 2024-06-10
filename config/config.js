@@ -1,4 +1,6 @@
-require("dotenv").config();
+import "dotenv/config";
+import pg from "pg";
+
 const {
   DB_HOST,
   DB_USERNAME,
