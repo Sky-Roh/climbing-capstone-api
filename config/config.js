@@ -1,4 +1,5 @@
-require("dotenv").config();
+import "dotenv/config"
+
 const {
   DB_HOST,
   DB_USERNAME,
