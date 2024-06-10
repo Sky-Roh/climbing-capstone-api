@@ -33,6 +33,12 @@ module.exports = {
     host: TEST_DB_HOST,
     dialectModule: pg,
     dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
   production: {
     username: DB_USERNAME,
@@ -41,5 +47,11 @@ module.exports = {
     host: DB_HOST,
     dialectModule: pg,
     dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 };
