@@ -1,5 +1,5 @@
-import "dotenv/config";
-import pg from "pg";
+require("dotenv").config();
+require('pg');
 
 const {
   DB_HOST,
@@ -20,6 +20,12 @@ module.exports = {
     host: DB_HOST,
     dialect: "postgres",
     dialectModule: pg,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
   test: {
     username: TEST_DB_USERNAME,
@@ -28,6 +34,7 @@ module.exports = {
     host: TEST_DB_HOST,
     dialect: "postgres",
     dialectModule: pg,
+
   },
   production: {
     username: DB_USERNAME,

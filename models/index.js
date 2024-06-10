@@ -3,7 +3,7 @@ import path from 'path';
 import { Sequelize } from 'sequelize';
 import { fileURLToPath } from 'url';
 import config from '../config/config.js';
-import pg from 'pg';
+require('pg');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
