@@ -1,7 +1,0 @@
-[build]
-  functions = "dist/functions"
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/api/server"
-  status = 200
