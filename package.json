@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "build": "netlify-lambda build src/functions",
     "dev": "nodemon server"
   },
   "name": "new-capstone-server",
@@ -19,5 +20,8 @@
   "main": "server.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "netlify-lambda": "^2.0.16"
+  }
 }
