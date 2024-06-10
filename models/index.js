@@ -3,6 +3,7 @@ import path from 'path';
 import { Sequelize } from 'sequelize';
 import { fileURLToPath } from 'url';
 import config from '../config/config.js';
+import pg from 'pg';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,10 +16,12 @@ let sequelize;
 if (dbConfig.use_env_variable) {
   sequelize = new Sequelize(process.env[dbConfig.use_env_variable], {
     ...dbConfig,
+    dialectModule: pg,
   });
 } else {
   sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
     ...dbConfig,
+    dialectModule: pg,
   });
 }
 

@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const {
   DB_HOST,
   DB_USERNAME,
@@ -18,7 +17,6 @@ module.exports = {
     database: DB_NAME,
     host: DB_HOST,
     dialect: "postgres",
-    dialectModule: require("pg"),
     dialectOptions: {
       ssl: {
         require: true,
@@ -32,7 +30,6 @@ module.exports = {
     database: TEST_DB_NAME,
     host: TEST_DB_HOST,
     dialect: "postgres",
-    dialectModule: require("pg"),
   },
   production: {
     username: DB_USERNAME,
@@ -40,6 +37,5 @@ module.exports = {
     database: "database_production",
     host: DB_HOST,
     dialect: "postgres",
-    dialectModule: require("pg"),
   },
 };
